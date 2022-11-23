@@ -1,0 +1,2 @@
+openshift-us-cluster-1
+openshift-us-cluster-2
