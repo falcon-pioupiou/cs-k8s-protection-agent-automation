@@ -65,13 +65,13 @@ This script is reading file `target_openshift_clusters.txt` and `target_k8s_clus
 Done via the script `3-generate_configs.sh` 
 
 This script is generating the default/base config files:
-- config/base/falcon-sensor/daemonset/config/falcon.env
-    Default CID
-    Default Tags
-    Default Proxy
-- config/base/falcon-kubernetes-protection/secrets/.dockerconfigjson
-    Secret to pull Kubernetes Protection Agent from CrowdStrike Registry
-- config/base/falcon-kubernetes-protection/secrets/api-secret.env
-    API Client Secret for the Kubernetes Protection Agent to send data to CS Cloud
-- config/base/falcon-kubernetes-protection/config/api-client-id.env
-    API Client ID for the Kubernetes Protection Agent to send data to CS Cloud
+- `config/base/falcon-sensor/daemonset/config/falcon.env` :
+    - Default CID
+    - Default Tags
+    - Default Proxy
+- `config/base/falcon-kubernetes-protection/secrets/.dockerconfigjson`
+    - Secret to pull Kubernetes Protection Agent from CrowdStrike Registry
+- `config/base/falcon-kubernetes-protection/secrets/api-secret.env`
+    - API Client Secret for the Kubernetes Protection Agent to send data to CS Cloud
+- `config/base/falcon-kubernetes-protection/config/api-client-id.env`
+    - API Client ID for the Kubernetes Protection Agent to send data to CS Cloud
