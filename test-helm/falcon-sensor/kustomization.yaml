@@ -1,0 +1,29 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+
+namespace: falcon-system
+
+# make sure namespace exists
+resources:
+- namespace.yaml
+
+helmChartInflationGenerator:
+- chartName: falcon-sensor
+  chartRepoUrl: https://crowdstrike.github.io/falcon-helm
+  releaseName: falcon-helm
+  releaseNamespace: falcon-system
+  # override with these custom values
+  values: values.yaml
+  #waiting for https://github.com/kubernetes-sigs/kustomize/pull/4808 to be in a new kustomize version
+  #not working on 4.5.7
+  #skipHooks: true
+
+patches:
+# Delete test cluster-role and test cluster-role binding 
+- path: delete-sa.yaml
+- path: delete-daemonset.yaml
+- path: delete-test-pod.yaml
+- path: delete-test-clusterrole.yaml
+- path: delete-test-clusterrolebinding.yaml
+

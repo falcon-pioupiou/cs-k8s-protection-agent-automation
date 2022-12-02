@@ -1,0 +1,15 @@
+namespace: falcon-kubernetes-protection
+
+# make sure namespace exists
+resources:
+- namespace.yaml
+
+helmChartInflationGenerator:
+- chartName: cs-k8s-protection-agent
+  chartRepoUrl: https://registry.crowdstrike.com/kpagent-helm
+  #chartVersion: 0.585.0
+  releaseName: kp-agent
+  releaseNamespace: falcon-kubernetes-protection
+  # override with these custom values
+  values: values.yaml
+

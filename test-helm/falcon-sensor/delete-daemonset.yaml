@@ -1,0 +1,7 @@
+$patch: delete
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  annotations:
+    helm.sh/hook: post-delete
+  name: falcon-helm-falcon-sensor-node-cleanup

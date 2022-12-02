@@ -1,0 +1,7 @@
+$patch: delete
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    helm.sh/hook: test-success
+  name: falcon-helm-falcon-sensor-test-ds-sensor-running

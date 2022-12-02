@@ -1,0 +1,6 @@
+falcon:
+  cid: "22222222222222222222222222222222-11"
+
+node:
+  image:
+    repository: "<Your_Registry>/falcon-node-sensor"

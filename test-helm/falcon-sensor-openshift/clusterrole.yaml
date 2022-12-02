@@ -1,0 +1,15 @@
+---
+# Source: falcon-sensor/templates/clusterrole.yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: falcon-helm-falcon-sensor-access-role
+rules:
+- apiGroups:
+  - security.openshift.io
+  resources:
+  - securitycontextconstraints
+  resourceNames:
+  - falcon-helm-falcon-sensor-node
+  verbs:
+  - use

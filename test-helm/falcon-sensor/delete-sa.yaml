@@ -1,0 +1,7 @@
+$patch: delete
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  annotations:
+    helm.sh/hook: post-delete
+  name: crowdstrike-falcon-sa-node-cleanup

@@ -1,0 +1,7 @@
+crowdstrikeConfig:
+  clientID: "FALCON_K8S_PROTECTION_AGENT_API_ID"
+  clientSecret: "FALCON_K8S_PROTECTION_AGENT_API_SECRET"
+  clusterName: "MY-CLUSTER"
+  env: "FALCON_CLOUD"
+  cid: "22222222222222222222222222222222"
+  dockerAPIToken: "dockerAPIToken"
