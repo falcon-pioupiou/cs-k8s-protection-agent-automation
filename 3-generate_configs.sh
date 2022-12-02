@@ -95,5 +95,5 @@ EOF
 echo "[*] Generating \"${BASE_KPA_DIR}/config/api-client-id.env\""
 cat <<EOF > "${BASE_KPA_DIR}/config/api-client-id.env"
 # Put here your KPA Agent API CLIENT ID
-AGENT_CLIENT_ID="${FALCON_K8S_PROTECTION_AGENT_API_ID}"
+AGENT_CLIENT_ID=${FALCON_K8S_PROTECTION_AGENT_API_ID}
 EOF
