@@ -6,7 +6,9 @@ Requirements:
 - curl
 ## Configuration
 
-Open the `0-config.env` file and configure each parameters
+- Open the `0-config.env` file and configure each parameters
+- Open and edit `target_k8s_clusters.txt` to list all your k8s cluster (to generate configs)
+- Open and edit `target_openshift_clusters.txt` to list all your OpenShift clusters
 
 ## Generate all files
 

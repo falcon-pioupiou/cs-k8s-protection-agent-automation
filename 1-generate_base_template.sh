@@ -52,8 +52,8 @@ configMapGenerator:
 
 patches:
 # Delete test cluster-role and test cluster-role binding 
-- path: delete-test-clusterrole.yaml
-- path: delete-test-clusterrole-binding.yaml
+#- path: delete-test-clusterrole.yaml
+#- path: delete-test-clusterrole-binding.yaml
 # Default image for all clusters
 - patch: |-
     - op: add
@@ -69,21 +69,21 @@ EOF
 
 #########
 # Delete test cluster-role and test cluster-role binding
-cat <<EOF > ${SENSOR_BASE_DIR}/falcon-sensor/daemonset/delete-test-clusterrole.yaml
-\$patch: delete
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  name: crowdstrike-falcon-sensor-test-access-role
-EOF
+#cat <<EOF > ${SENSOR_BASE_DIR}/falcon-sensor/daemonset/delete-test-clusterrole.yaml
+#\$patch: delete
+#apiVersion: rbac.authorization.k8s.io/v1
+#kind: ClusterRole
+#metadata:
+#  name: crowdstrike-falcon-sensor-test-access-role
+#EOF
 
-cat <<EOF > ${SENSOR_BASE_DIR}/falcon-sensor/daemonset/delete-test-clusterrole-binding.yaml
-\$patch: delete
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRoleBinding
-metadata:
-  name: crowdstrike-falcon-sensor-test-access-binding
-EOF
+#cat <<EOF > ${SENSOR_BASE_DIR}/falcon-sensor/daemonset/delete-test-clusterrole-binding.yaml
+#\$patch: delete
+#apiVersion: rbac.authorization.k8s.io/v1
+#kind: ClusterRoleBinding
+#metadata:
+#  name: crowdstrike-falcon-sensor-test-access-binding
+#EOF
 
 
 #########
