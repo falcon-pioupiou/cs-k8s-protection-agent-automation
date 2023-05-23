@@ -97,11 +97,11 @@ helm template --api-versions "security.openshift.io/v1" --no-hooks \
     crowdstrike crowdstrike/falcon-sensor > ${SENSOR_BASE_DIR}/falcon-sensor/daemonset-openshift/clusterrole.yaml
 
 ## Generate SecurityContextConstraint
-helm template --api-versions "security.openshift.io/v1" --no-hooks \
-    --set falcon.cid="22222222222222222222222222222222-11" \
-    --set node.image.repository="<Your_Registry>/falcon-node-sensor" \
-    -s templates/node_scc.yaml \
-    crowdstrike crowdstrike/falcon-sensor > ${SENSOR_BASE_DIR}/falcon-sensor/daemonset-openshift/node_scc.yaml
+#helm template --api-versions "security.openshift.io/v1" --no-hooks \
+#    --set falcon.cid="22222222222222222222222222222222-11" \
+#    --set node.image.repository="<Your_Registry>/falcon-node-sensor" \
+#    -s templates/node_scc.yaml \
+#    crowdstrike crowdstrike/falcon-sensor > ${SENSOR_BASE_DIR}/falcon-sensor/daemonset-openshift/node_scc.yaml
 
 cat <<EOF > ${SENSOR_BASE_DIR}/falcon-sensor/daemonset-openshift/kustomization.yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
@@ -111,7 +111,7 @@ namespace: falcon-system
 
 resources:
 - ../daemonset
-- node_scc.yaml
+#- node_scc.yaml
 
 patches:
 - path: clusterrole.yaml
